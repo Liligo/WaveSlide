@@ -1,7 +1,7 @@
 """Entry point for the application."""
 from __future__ import annotations
 
-from yolo.app import run
+from waveslide.app import run
 
 
 def main() -> int:

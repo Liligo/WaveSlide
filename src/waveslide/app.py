@@ -45,7 +45,7 @@ def run() -> None:
             controller.handle_gesture(gesture, hand_state, time.time())
 
             draw_status(frame, gesture, controller.mode.value)
-            cv2.imshow("Yolo Presenter", frame)
+            cv2.imshow("WaveSlide Presenter", frame)
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
     finally:

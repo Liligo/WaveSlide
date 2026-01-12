@@ -22,8 +22,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--name",
-        default="YoloApp",
-        help="Application name (default: YoloApp).",
+        default="WaveSlide",
+        help="Application name (default: WaveSlide).",
     )
     parser.add_argument(
         "--onefile",
