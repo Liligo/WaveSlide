@@ -35,3 +35,21 @@
 - 应用仅在本地运行，默认不收集、存储或上传任何个人数据。
 - 摄像头/媒体输入只用于本地处理（如手势识别或图像分析）。
 - 若你在应用中自行实现联网、日志或远程服务，请在界面或文档中明确告知用户。
+=======
+Gesture-controlled slide presenter with a laser-pointer mode.
+
+## Quick start
+
+```bash
+pip install -r requirements.txt
+PYTHONPATH=src python -m yolo.app
+```
+
+## Gestures
+
+- Swipe right: next slide
+- Swipe left: previous slide
+- Open palm: switch to laser pointer mode
+- Fist: return to slide mode
+
+In laser mode, the index finger tip controls the system cursor.
