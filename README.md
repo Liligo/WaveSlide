@@ -1,4 +1,4 @@
-# Yolo
+# WaveSlide
 
 ## 使用说明
 
@@ -14,7 +14,7 @@
 3. 运行入口脚本：
 
    ```bash
-   PYTHONPATH=src python -m yolo.app
+   PYTHONPATH=src python -m waveslide.app
    ```
 
 ## 使用 PyInstaller 打包
@@ -23,11 +23,11 @@
 2. 使用打包脚本生成可执行文件：
 
    ```bash
-   python packaging/build.py --onefile --name YoloApp
+   python packaging/build.py --onefile --name WaveSlide
    ```
 
-3. 在 `dist/YoloApp/` 下获取输出文件：
-   - Windows：`YoloApp.exe`
+3. 在 `dist/WaveSlide/` 下获取输出文件：
+   - Windows：`WaveSlide.exe`
    - macOS：可执行文件或 `.app`（如需 `.app`，可改用 `--windowed` 并使用 `pyinstaller --windowed` 配合适配）
 
 ## 隐私声明
