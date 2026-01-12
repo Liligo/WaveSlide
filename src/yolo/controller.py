@@ -16,6 +16,7 @@ class Mode(Enum):
 @dataclass
 class ControllerConfig:
     cooldown_seconds: float = 0.5
+    mode_cooldown_seconds: float = 0.5
 
 
 class SlideController:
@@ -24,6 +25,7 @@ class SlideController:
         self._laser = laser
         self._mode = Mode.SLIDE
         self._last_trigger: Optional[float] = None
+        self._last_mode_switch: Optional[float] = None
 
     @property
     def mode(self) -> Mode:
@@ -31,10 +33,14 @@ class SlideController:
 
     def handle_gesture(self, gesture: Gesture, hand_state: Optional[HandState], now: float) -> None:
         if gesture == Gesture.FIST:
-            self._mode = Mode.SLIDE
+            if self._can_switch_mode(now):
+                self._mode = Mode.SLIDE
+                self._last_mode_switch = now
             return
         if gesture == Gesture.OPEN_PALM:
-            self._mode = Mode.LASER
+            if self._can_switch_mode(now):
+                self._mode = Mode.LASER
+                self._last_mode_switch = now
             return
 
         if self._mode == Mode.LASER:
@@ -53,3 +59,8 @@ class SlideController:
         if self._last_trigger is None:
             return True
         return (now - self._last_trigger) >= self._config.cooldown_seconds
+
+    def _can_switch_mode(self, now: float) -> bool:
+        if self._last_mode_switch is None:
+            return True
+        return (now - self._last_mode_switch) >= self._config.mode_cooldown_seconds
