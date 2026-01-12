@@ -1,13 +1,11 @@
 """Entry point for the application."""
 from __future__ import annotations
 
+from yolo.app import run
+
 
 def main() -> int:
-    """Placeholder entry point.
-
-    Replace this with your actual application logic.
-    """
-    print("Yolo app entry point. Replace src/main.py with your app.")
+    run()
     return 0
 
 

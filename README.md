@@ -11,10 +11,10 @@
    pip install -r requirements.txt
    ```
 
-3. 运行入口脚本（默认入口在 `src/main.py`，请替换为你的实际逻辑）：
+3. 运行入口脚本：
 
    ```bash
-   python src/main.py
+   PYTHONPATH=src python -m yolo.app
    ```
 
 ## 使用 PyInstaller 打包
@@ -35,17 +35,8 @@
 - 应用仅在本地运行，默认不收集、存储或上传任何个人数据。
 - 摄像头/媒体输入只用于本地处理（如手势识别或图像分析）。
 - 若你在应用中自行实现联网、日志或远程服务，请在界面或文档中明确告知用户。
-=======
-Gesture-controlled slide presenter with a laser-pointer mode.
 
-## Quick start
-
-```bash
-pip install -r requirements.txt
-PYTHONPATH=src python -m yolo.app
-```
-
-## Gestures
+## 手势说明
 
 - Swipe right: next slide
 - Swipe left: previous slide

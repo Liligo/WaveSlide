@@ -15,6 +15,8 @@ class CameraStream:
     def __init__(self, config: CameraConfig) -> None:
         self._config = config
         self._capture = cv2.VideoCapture(config.device_index)
+        if not self._capture.isOpened():
+            raise RuntimeError(f"Unable to open camera device {config.device_index}")
         self._capture.set(cv2.CAP_PROP_FRAME_WIDTH, config.width)
         self._capture.set(cv2.CAP_PROP_FRAME_HEIGHT, config.height)
         self._capture.set(cv2.CAP_PROP_FPS, config.fps)
