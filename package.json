@@ -1,5 +1,5 @@
 {
-  "name": "yolo-gesture-control",
+  "name": "waveslide-gesture-control",
   "version": "0.1.0",
   "description": "Gesture control desktop UI prototype",
   "main": "src/main.js",

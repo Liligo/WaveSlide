@@ -29,7 +29,7 @@ exe = EXE(
     a.binaries,
     a.zipfiles,
     a.datas,
-    name="YoloApp",
+    name="WaveSlide",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
